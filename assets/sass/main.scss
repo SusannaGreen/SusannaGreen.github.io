@@ -598,7 +598,7 @@ $size-header-pad: 4em;
 
 		&:before {
 			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-			background: url('images/overlay.png');
+			background: url('images/bg.jpg');
 			border-radius: _size(border-radius);
 			content: '';
 			display: block;
@@ -640,7 +640,7 @@ $size-header-pad: 4em;
 				}
 
 				&:before {
-					background: url('images/overlay.png'), url('images/overlay.png');
+					background: url('images/bg.jpg'), url('images/bg.jpg');
 					opacity: 1.0;
 				}
 			}
@@ -1073,11 +1073,11 @@ $size-header-pad: 4em;
 		@include vendor('align-items', 'flex-end');
 		@include vendor('justify-content', 'space-between');
 		background-color:		_palette(accent2, bg);
-		background-attachment:	scroll,								scroll;
-		background-image:		url('images/overlay.png'),			url('../../images/bg.JPG');
-		background-position:	top left,							top left;
-		background-repeat:		repeat,								no-repeat;
-		background-size:		auto,								150%;
+		background-attachment:	scroll;
+		background-image: url('../../images/bg.jpg');
+		background-position: top left;
+		background-repeat: no-repeat;
+		background-size:150%;
 		color: _palette(accent2, fg);
 		height: 100%;
 		left: 0;
@@ -1468,10 +1468,10 @@ $size-header-pad: 4em;
 			#footer {
 				background-attachment:	scroll;
 				background-color:		_palette(accent2, bg);
-				background-image:		url('images/overlay.png'),		url('../../images/bg.JPG');
-				background-position:	top left,						bottom center;
-				background-repeat:		repeat,							no-repeat;
-				background-size:		auto,							cover;
+				background-image:url('../../images/bg.jpg');
+				background-position:bottom center;
+				background-repeat:no-repeat;
+				background-size:cover;
 				bottom: auto;
 				left: auto;
 				padding: $size-header-pad $size-header-pad ($size-header-pad * 1.5) $size-header-pad;
