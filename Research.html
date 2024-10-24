@@ -31,6 +31,10 @@
 						<header class="major">
 							<h2>My Research</h2>
 						</header>
+						<!-- <p style="text-align: center;"><i>"The data is noisy - like me! - Susanna Green" </i></p>
+						<p> Identifying whether we have observed a gravitational wave (or not) in the data from our detectors is a computationally expensive task.
+							With all the detectors planned </p>-->
+					
 						<h2>Fast Gravitational-wave Data Analysis</h2>
 						<div class="content">
 							<figure class="image-left">
@@ -38,17 +42,26 @@
 								<figcaption>Figure 1: GWtuna - Trawling through the data to find Gravitational Waves with Optuna and
 									Jax.</figcaption>
 							</figure>
-						<p>Gwtuna is a fast gravitational-wave search prototype built on 
-							Optuna and JAX, see figure 1. In this research alternate methods, specifically Tree-structured Parzen Estimator 
-							and Covariance Matrix Adaption Evolution Strategy, were explored and applied to a binary neutron 
-							star merger search.  This template bank free search prototype can identify a binary neutron star merger in 1 second (median value) and in less than 1000 matched-filter evaluations
-							when 512 seconds of data is searched over. GWtuna can be summarised as:  
+						<p>GWtuna is a fast gravitational-wave search prototype built on the
+							Optuna (optimisation software library) and JAX (accelerator-orientated array computation library), see figure 1. 
+							In this research alternate methods, specifically Tree-structured Parzen Estimator (TPE) 
+							and Covariance Matrix Adaption Evolution Strategy (CMA-ES), were used to create a template
+							bank free binary neutron star merger search. TPE is a hyper parameterisation
+							optimisation algorithm (also known as a black box algorithm) that uses Bayesian
+							optimisation to find the parameters that produce the highest objective value, see 
+							<a href="https://proceedings.neurips.cc/paper_files/paper/2011/file/86e8f7ab32cfd12577bc2619bc635690-Paper.pdf"> here </a> for more information.
+							Whereas, CMA-ES is an evolutionary strategy algorithm where the "best traits" are passed down the generations and this is done by
+							updating the mean and covariance matrix, see <a href="https://arxiv.org/pdf/1604.00772"> here </a> for more infomation 
+							(or <a href="https://lilianweng.github.io/posts/2019-09-05-evolution-strategies/"> here </a> for an easy to understand blog). 
+							GWtuna identified a binary neutron star merger in 1 second (median value) 
+							and in less than 1000 matched-filter evaluations when 512 seconds of data was searched over. GWtuna can be summarised as:  
 							<ul>
-								<li>Non-template bank search</li>
-								<li>Stopping algorithm</li>
-								<li>JAX functionality</li>
-								<li>Computationally cheap</li>
-								<li>Easy to generalise</li>
+								<li>Non-template bank search,</li>
+								<li>Stopping algorithm,</li>
+								<li>JAX functionalities - specifically JIT and GPU
+									compatibility,</li>
+								<li>Computationally cheap,</li>
+								<li>Easy to generalise.</li>
 							</ul>
 							TPE and CMA-ES (and the family of algorithms they represent) provide alternatives to the standard
 							template bank search and therefore have the potential to revolutionise the future of gravitationalwave data analysis.
@@ -68,8 +81,8 @@
 							LearningMatch and TemplateGeNN are a machine learning pipeline that could be used in the 
 							gravitational-wave community to speed up template bank generation. The aim of LearningMatch 
 							was to replace the mathematical computation of the match with a multilayered perceptron, shown in figure 2.  
-							LearningMatch was able to predict the match to a multi-layered perceptron that can predict 
-							the match to within 10% in microseconds. The trained LearningMatch model was then integrated
+							LearningMatch was able to predict the match to within 4% of the actual match value. 
+							The trained LearningMatch model was then integrated
 							into TemplateGeNN, a stochastic template bank generation algorithm that runs on GPUs. 
 							Therefore, a template bank can be generated in hours and meets the standards set by the 
 							LVK Collaboration.
